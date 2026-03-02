@@ -1,0 +1,180 @@
+/* ========= BASE ========= */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #3b2a1a;
+}
+
+/* Fundo fixo */
+.bg-fixed{
+  position: fixed;
+  inset: 0;
+  background-image: url("/img/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* ========= CENTRALIZAÇÃO ========= */
+.screen{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========= FOLHA (A4 RETRATO) ========= */
+.parchment{
+  height: min(78vh, 920px);
+  aspect-ratio: 1 / 1.414;
+  max-width: 78vw;
+
+  background-image: url("/img/bg.png");
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 14px;
+  box-shadow: 0 26px 60px rgba(0,0,0,0.35);
+
+  padding: 44px 42px 26px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* ========= TÍTULO ========= */
+.title-area{
+  text-align: center;
+}
+
+.title{
+  margin: 0;
+  font-size: clamp(34px, 2.7vw, 52px);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ========= TÓPICOS ========= */
+.topics{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+/* 🔥 BOTÕES PRINCIPAIS (ALTERADO) */
+.topic-btn{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 20px 24px;
+  border-radius: 24px;
+
+  border: 3px solid rgba(120, 85, 45, 0.40);
+  background: rgba(255, 245, 215, 0.65);
+
+  font-size: clamp(20px, 1.2vw, 24px);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+
+  box-shadow:
+    inset 0 3px 0 rgba(255,255,255,0.40),
+    0 14px 22px rgba(0,0,0,0.18);
+
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.topic-btn:hover{
+  transform: translateY(-3px);
+  box-shadow:
+    inset 0 3px 0 rgba(255,255,255,0.40),
+    0 18px 28px rgba(0,0,0,0.22);
+}
+
+.topic-btn:active{
+  transform: translateY(0px);
+}
+
+/* Ícone maior e mais alinhado */
+.icon{
+  font-size: 28px;
+}
+
+/* ========= BOTÕES VOLTAR/HOME ========= */
+.nav{
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 44px;
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+}
+
+/* 🔥 CÍRCULOS MAIS ELEGANTES (ALTERADO) */
+.nav-btn{
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  border: 2.5px solid rgba(120, 85, 45, 0.45);
+
+  background: rgba(255, 245, 215, 0.60);
+
+  font-size: 24px;
+  font-weight: 700;
+
+  box-shadow:
+    inset 0 3px 0 rgba(255,255,255,0.35),
+    0 10px 18px rgba(0,0,0,0.18);
+
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.nav-btn:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 3px 0 rgba(255,255,255,0.35),
+    0 14px 22px rgba(0,0,0,0.22);
+}
+
+.nav-btn:active{
+  transform: translateY(0px);
+}
+
+/* ========= MOBILE ========= */
+@media (max-width: 900px){
+  .parchment{
+    height: auto;
+    aspect-ratio: auto;
+    width: 92vw;
+    max-width: 92vw;
+    padding: 28px 22px 18px;
+  }
+
+  .topics{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .title{
+    font-size: 28px;
+  }
+
+  .nav{
+    margin-top: 10px;
+    gap: 34px;
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+}
