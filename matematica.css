@@ -1,0 +1,224 @@
+/* ========= BASE ========= */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* sem rolagem */
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #3b2a1a;
+}
+
+/* Fundo fixo: ocupa a tela inteira */
+.bg-fixed{
+  position: fixed;
+  inset: 0;
+  background-image: url("/img/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* ========= CENTRALIZAÇÃO ========= */
+.screen{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========= FOLHA (A4 RETRATO) ========= */
+/* Desktop: mantém A4 retrato */
+.parchment{
+  height: min(78vh, 920px);
+  aspect-ratio: 1 / 1.414; /* A4 retrato */
+  max-width: 78vw;
+
+  background-image: url("/img/bg.png");
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 14px;
+
+  box-shadow: 0 26px 60px rgba(0,0,0,0.35);
+
+  padding: 44px 42px 26px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* ========= TÍTULO ========= */
+.title-area{
+  text-align: center;
+}
+
+.title{
+  margin: 0;
+  font-size: clamp(34px, 2.7vw, 52px);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ========= TÓPICOS ========= */
+.topics{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.topic-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ✅ centraliza horizontal */
+  gap: 14px;
+
+  padding: 14px 18px;
+  border-radius: 14px;
+
+  border: 2px solid rgba(100, 70, 40, 0.35);
+  background: rgba(255, 245, 215, 0.60);
+
+  font-size: 19px;
+  font-weight: 700;
+
+  text-align: center; /* ✅ centraliza texto multi-linha */
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.topic-btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.icon{
+  font-size: 26px;
+}
+
+/* ========= BOTÕES VOLTAR/HOME ========= */
+.nav{
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* ✅ antes era 44px ou 34px */
+
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+}
+
+.nav-btn{
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  border: 1.5px solid rgba(100, 70, 40, 0.45);
+
+  background: rgba(255, 245, 215, 0.45);
+
+  font-size: 22px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nav-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.22);
+}
+
+.nav-btn:active{
+  transform: translateY(0px);
+}
+
+/* ========= MOBILE ========= */
+@media (max-width: 900px){
+
+  /* ✅ o “pergaminho de fundo” vira o painel da tela útil
+     e o conteúdo fica menor para caber sem cortar */
+  .screen{
+    height: 100svh; /* melhor no celular */
+    padding: 0;
+  }
+
+  .parchment{
+    /* ocupa a tela, mas com “margem” para caber confortável */
+    width: calc(100vw - 28px);
+    height: calc(100svh - 28px - env(safe-area-inset-bottom));
+    max-width: none;
+    aspect-ratio: auto;
+
+    /* arredondamento um pouco maior no celular */
+    border-radius: 16px;
+
+    /* padding menor para sobrar espaço para os botões */
+    padding: 22px 18px 14px;
+
+    /* gap menor para não estourar a altura */
+    gap: 16px;
+  }
+
+  .topics{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .title{
+    font-size: 28px;
+    letter-spacing: 0.6px;
+  }
+
+  /* ✅ compacta os botões no celular só o suficiente */
+  .topic-btn{
+    padding: 14px 16px;
+    font-size: 18px;
+    border-radius: 14px;
+  }
+
+  .icon{
+    font-size: 22px;
+  }
+
+  /* ✅ sobe e garante que nunca corte */
+  .nav{
+    gap: 30px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+
+  .nav-btn{
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+/* ========= CONTROLE DE MÓDULOS ========= */
+
+/* Todos começam desativados */
+.topic-btn{
+  opacity: 0.35;
+  filter: grayscale(70%);
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+/* Apenas Aritmética ativa */
+.topic-btn[data-topic="aritmetica-algebra"]{
+  opacity: 1;
+  filter: none;
+  pointer-events: auto;
+}
+
+/* Efeito leve no ativo */
+.topic-btn[data-topic="aritmetica-algebra"]:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
