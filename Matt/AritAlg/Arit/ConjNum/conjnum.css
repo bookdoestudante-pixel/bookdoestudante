@@ -49,7 +49,7 @@ body{
   border-radius: 18px;
   box-shadow: 0 18px 45px rgba(0,0,0,.35);
 
-  padding: 18px 14px 12px;
+  padding: 22px 14px 12px;
 
   display: flex;
   flex-direction: column;
@@ -62,11 +62,11 @@ body{
 }
 
 .title{
-  font-size: clamp(30px, 8vw, 44px);
+  font-size: clamp(36px, 9vw, 52px);
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.05;
   letter-spacing: .4px;
-  margin-bottom: 14px;
+  margin-bottom: 22px;
 }
 
 /* ========= ÁREA DOS TÓPICOS ========= */
@@ -75,43 +75,12 @@ body{
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
-  gap: 8px;
+  gap: 12px;
 }
 
-/* ========= QUADROS ========= */
-.topic-card{
-  width: 100%;
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px;
-  border-radius: 14px;
-
-  border: 2px solid rgba(100, 70, 40, 0.35);
-  background: rgba(255, 245, 215, 0.35);
-
-  opacity: 1;
-  filter: none;
-}
-
-/* ========= BOTÕES INTERNOS ========= */
-.sub-buttons{
-  width: 100%;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 10px;
-  box-sizing: border-box;
-}
-
-.sub-buttons.single{
-  grid-template-columns: 1fr;
-}
-
+/* ========= BOTÕES ========= */
 .sub-btn{
   width: 100%;
   min-width: 0;
@@ -120,28 +89,33 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 14px;
 
-  padding: 10px 8px;
-  min-height: 58px;
+  padding: 12px 14px;
+  min-height: 78px;
 
-  border-radius: 14px;
+  border-radius: 18px;
   border: 1.5px solid rgba(100, 70, 40, 0.45);
   background: rgba(255, 245, 215, 0.82);
 
   font-family: Georgia, "Times New Roman", serif;
 
-  font-size: clamp(13px, 2.9vw, 18px);
+  font-size: clamp(22px, 5.2vw, 30px);
   letter-spacing: 0.2px;
 
   font-weight: 700;
   color: #3b2a1a;
 
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
   overflow: hidden;
 
   cursor: pointer;
   transition: 0.2s ease;
+
+  box-shadow:
+    0 3px 8px rgba(65,38,12,.18),
+    inset 0 1px 0 rgba(255,255,255,.65);
 }
 
 .sub-btn:hover{
@@ -163,49 +137,23 @@ body{
   transform: translateY(0);
 }
 
+/* ========= ÍCONES ========= */
 .sub-icon{
   flex: 0 0 auto;
-  width: 34px;
-  height: 34px;
+
+  width: 40px;
+  height: 40px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   border-radius: 999px;
+
   background: rgba(255, 250, 225, 0.85);
   border: 1px solid rgba(100, 70, 40, 0.25);
 
-  font-size: 20px;
-  line-height: 1;
-}
-
-/* ========= ÍCONES EM CÍRCULO ========= */
-.icon-circle{
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background:
-    radial-gradient(
-      circle at 35% 28%,
-      rgba(255,255,245,.98),
-      rgba(241,216,157,.82)
-    );
-
-  border: 1px solid rgba(127,83,29,.35);
-
-  color: #1f160f;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 25px;
-  font-weight: 900;
+  font-size: 22px;
   line-height: 1;
 
   box-shadow:
@@ -217,7 +165,7 @@ body{
 .nav{
   flex: 0 0 auto;
 
-  margin-top: 10px;
+  margin-top: 14px;
 
   display: flex;
   justify-content: center;
@@ -227,106 +175,76 @@ body{
 }
 
 .nav-btn{
-  width: 62px;
-  height: 62px;
-
-  border-radius: 50%;
-
-  border: 2px solid rgba(128,82,25,.65);
-
-  background:
-    radial-gradient(
-      circle at 35% 28%,
-      rgba(255,255,245,.98),
-      rgba(242,213,145,.88)
-    );
+  width: 52px;
+  height: 52px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: #111;
+  border-radius: 999px;
+  border: 1.5px solid rgba(100, 70, 40, 0.45);
+
+  background: rgba(255, 245, 215, 0.45);
+
+  font-size: 22px;
+  font-weight: 700;
 
   cursor: pointer;
-
-  box-shadow:
-    0 5px 10px rgba(65,38,12,.28),
-    inset 0 2px 0 rgba(255,255,255,.72),
-    inset 0 -2px 5px rgba(114,70,20,.18);
-
-  transition:
-    transform .14s ease,
-    box-shadow .14s ease,
-    background .14s ease;
+  transition: 0.2s ease;
 }
 
 .nav-btn:hover{
   transform: translateY(-2px);
-
-  box-shadow:
-    0 7px 13px rgba(65,38,12,.34),
-    inset 0 2px 0 rgba(255,255,255,.82),
-    inset 0 -2px 5px rgba(114,70,20,.18);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.22);
 }
 
 .nav-btn:active{
-  transform: scale(.96);
+  transform: translateY(0px);
 }
 
 .nav-icon{
-  font-size: 35px;
-  font-weight: 900;
+  font-size: 22px;
+  font-weight: 700;
   line-height: 1;
-  color: #111;
+  color: #3b2a1a;
 }
 
 /* ========= TELAS MUITO PEQUENAS ========= */
 @media (max-height: 700px){
+
   .parchment{
-    padding: 12px 12px 8px;
+    padding: 14px 12px 8px;
   }
 
   .title{
-    font-size: clamp(26px, 7vw, 36px);
-    margin-bottom: 8px;
+    font-size: clamp(30px, 8vw, 40px);
+    margin-bottom: 12px;
   }
 
   .topics{
-    gap: 6px;
-  }
-
-  .topic-card{
-    padding: 5px;
-  }
-
-  .sub-buttons{
-    gap: 7px;
+    gap: 8px;
   }
 
   .sub-btn{
-    min-height: 47px;
-    font-size: clamp(14px, 3.5vw, 17px);
-    padding: 5px 8px;
+    min-height: 62px;
+    font-size: clamp(18px, 4.5vw, 22px);
+    padding: 8px 10px;
   }
 
-  .icon-circle{
+  .sub-icon{
     width: 32px;
     height: 32px;
-    min-width: 32px;
-    font-size: 21px;
+    font-size: 18px;
   }
 
   .nav{
-    margin-top: 7px;
+    margin-top: 8px;
     gap: 26px;
   }
 
   .nav-btn{
     width: 50px;
     height: 50px;
-  }
-
-  .nav-icon{
-    font-size: 29px;
   }
 }

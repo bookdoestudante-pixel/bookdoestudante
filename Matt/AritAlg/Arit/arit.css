@@ -62,7 +62,7 @@ body{
 }
 
 .title{
-  font-size: clamp(30px, 8vw, 44px);
+  font-size: clamp(34px, 9vw, 48px);
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: .4px;
@@ -73,75 +73,55 @@ body{
 .topics{
   flex: 1 1 auto;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  gap: 8px;
-}
-
-/* ========= QUADROS ========= */
-.topic-card{
-  width: 100%;
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px;
-  border-radius: 14px;
-
-  border: 2px solid rgba(100, 70, 40, 0.35);
-  background: rgba(255, 245, 215, 0.35);
-
-  opacity: 1;
-  filter: none;
-}
-
-/* ========= BOTÕES INTERNOS ========= */
-.sub-buttons{
-  width: 100%;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 10px;
-  box-sizing: border-box;
+  grid-template-columns: 1fr 1fr;
+
+  align-content: space-evenly;
+
+  column-gap: 8px;
+  row-gap: 10px;
 }
 
-.sub-buttons.single{
-  grid-template-columns: 1fr;
-}
-
+/* ========= BOTÕES ========= */
 .sub-btn{
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
 
   display: flex;
+  flex-direction: column;
+
   align-items: center;
   justify-content: center;
+
   gap: 8px;
 
-  padding: 10px 8px;
-  min-height: 58px;
+  padding: 14px 10px;
+  min-height: 92px;
 
-  border-radius: 14px;
+  border-radius: 16px;
   border: 1.5px solid rgba(100, 70, 40, 0.45);
+
   background: rgba(255, 245, 215, 0.82);
 
   font-family: Georgia, "Times New Roman", serif;
 
-  font-size: clamp(13px, 2.9vw, 18px);
+  font-size: clamp(14px, 3.4vw, 20px);
   letter-spacing: 0.2px;
 
   font-weight: 700;
   color: #3b2a1a;
 
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
   overflow: hidden;
 
   cursor: pointer;
   transition: 0.2s ease;
+
+  box-shadow:
+    0 3px 8px rgba(65,38,12,.18),
+    inset 0 1px 0 rgba(255,255,255,.65);
 }
 
 .sub-btn:hover{
@@ -163,49 +143,23 @@ body{
   transform: translateY(0);
 }
 
+/* ========= ÍCONES ========= */
 .sub-icon{
   flex: 0 0 auto;
-  width: 34px;
-  height: 34px;
+
+  width: 26px;
+  height: 26px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   border-radius: 999px;
+
   background: rgba(255, 250, 225, 0.85);
   border: 1px solid rgba(100, 70, 40, 0.25);
 
-  font-size: 20px;
-  line-height: 1;
-}
-
-/* ========= ÍCONES EM CÍRCULO ========= */
-.icon-circle{
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background:
-    radial-gradient(
-      circle at 35% 28%,
-      rgba(255,255,245,.98),
-      rgba(241,216,157,.82)
-    );
-
-  border: 1px solid rgba(127,83,29,.35);
-
-  color: #1f160f;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 25px;
-  font-weight: 900;
+  font-size: 14px;
   line-height: 1;
 
   box-shadow:
@@ -213,6 +167,7 @@ body{
     0 2px 5px rgba(65,38,12,.18);
 }
 
+/* ========= NAVEGAÇÃO ========= */
 /* ========= NAVEGAÇÃO ========= */
 .nav{
   flex: 0 0 auto;
@@ -282,12 +237,13 @@ body{
 
 /* ========= TELAS MUITO PEQUENAS ========= */
 @media (max-height: 700px){
+
   .parchment{
     padding: 12px 12px 8px;
   }
 
   .title{
-    font-size: clamp(26px, 7vw, 36px);
+    font-size: clamp(30px, 8vw, 40px);
     margin-bottom: 8px;
   }
 
@@ -295,25 +251,17 @@ body{
     gap: 6px;
   }
 
-  .topic-card{
-    padding: 5px;
-  }
-
-  .sub-buttons{
-    gap: 7px;
-  }
-
   .sub-btn{
-    min-height: 47px;
-    font-size: clamp(14px, 3.5vw, 17px);
-    padding: 5px 8px;
+    min-height: 82px;
+    font-size: clamp(12px, 3vw, 15px);
+    padding: 10px 8px;
+    gap: 6px;
   }
 
-  .icon-circle{
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
-    font-size: 21px;
+  .sub-icon{
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
   }
 
   .nav{
