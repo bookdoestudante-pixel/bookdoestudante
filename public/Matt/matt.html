@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Matemática - Book do Estudante</title>
+
+  <link rel="stylesheet" href="./matt.css" />
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#7a4a24">
+  <link rel="apple-touch-icon" href="/img/icons/icon-192.png">
+
+  <script src="/pwa.js" defer></script>
+</head>
+
+<body>
+  <div class="bg-fixed" aria-hidden="true"></div>
+
+  <main class="screen" role="main">
+    <div class="parchment">
+
+      <header class="title-area">
+        <h1 class="title">
+          Matemática<br>
+          e suas Tecnologias
+        </h1>
+      </header>
+
+      <section class="topics" aria-label="Tópicos de Matemática">
+
+        <div class="topic-card">
+          <div class="sub-buttons">
+            <button class="sub-btn" data-go="./AritAlg/Arit/arit.html" type="button">
+              <span class="icon-circle">+</span>
+              <span>Aritmética</span>
+            </button>
+
+            <button class="sub-btn" data-go="./AritAlg/Alg/alg.html" type="button">
+              <span class="icon-circle">×</span>
+              <span>Álgebra</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="topic-card">
+          <div class="sub-buttons">
+            <button class="sub-btn" data-go="./GeoTrig/Geo/geo.html" type="button">
+              <span class="icon-circle">△</span>
+              <span>Geometria</span>
+            </button>
+
+            <button class="sub-btn" data-go="./GeoTrig/Trig/trig.html" type="button">
+              <span class="icon-circle">∿</span>
+              <span>Trigonometria</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="topic-card">
+          <div class="sub-buttons">
+            <button class="sub-btn" data-go="./EstProb/Est/est.html" type="button">
+              <span class="icon-circle">▥</span>
+              <span>Estatística</span>
+            </button>
+
+            <button class="sub-btn" data-go="./EstProb/Prob/prob.html" type="button">
+              <span class="icon-circle">⚂</span>
+              <span>Probabilidade</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="topic-card">
+          <div class="sub-buttons">
+            <button class="sub-btn" data-go="./MatComp/Aplic/aplic.html" type="button">
+              <span class="icon-circle">⚙</span>
+              <span>Aplicada</span>
+            </button>
+
+            <button class="sub-btn" data-go="./MatComp/Comp/comp.html" type="button">
+              <span class="icon-circle">⌨</span>
+              <span>Computacional</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="topic-card">
+          <div class="sub-buttons single">
+            <button class="sub-btn" data-go="./MatDisc/matdisc.html" type="button">
+              <span class="icon-circle">▦</span>
+              <span>Matemática Discreta</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="topic-card">
+          <div class="sub-buttons">
+            <button class="sub-btn" data-go="./MatFinMod/MatFin/matfin.html" type="button">
+              <span class="icon-circle">$</span>
+              <span>Financeira</span>
+            </button>
+
+            <button class="sub-btn" data-go="./MatFinMod/Mod/modelagem.html" type="button">
+              <span class="icon-circle">↗</span>
+              <span>Modelagem</span>
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <footer class="nav">
+        <button class="nav-btn" id="btnVoltar" type="button" aria-label="Voltar">
+          <span class="nav-icon">↩</span>
+        </button>
+
+        <button class="nav-btn" id="btnHome" type="button" aria-label="Home">
+          <span class="nav-icon">⌂</span>
+        </button>
+      </footer>
+
+    </div>
+  </main>
+
+  <script src="./matt.js"></script>
+</body>
+</html>
