@@ -1,0 +1,481 @@
+/* ========= BASE ========= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2f2217;
+  overflow: hidden;
+}
+
+/* ========= FUNDO ========= */
+.bg-fixed{
+  position: fixed;
+  inset: 0;
+  background-image: url("/img/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* ========= TELA ========= */
+.screen{
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+/* ========= PERGAMINHO ========= */
+.parchment{
+  position: relative;
+  overflow: hidden;
+
+  width: min(96vw, 440px);
+  height: calc(100svh - 16px);
+
+  background-image: url("/img/bg.png");
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+
+  padding: 18px 16px 12px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========= TÍTULO ========= */
+.title-area{
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.title{
+  font-size: clamp(40px, 10vw, 58px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .4px;
+  margin-bottom: 2px;
+}
+
+/* ========= ÁREA DOS TÓPICOS ========= */
+.topics{
+  flex: 1 1 auto;
+  position: static;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  gap: 10px;
+}
+
+/* ========= BOTÕES ========= */
+.topic-btn{
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+
+  padding: 10px 22px;
+  min-height: 62px;
+
+  border-radius: 14px;
+  border: 2px solid rgba(95, 55, 18, 0.65);
+
+  background: rgba(255, 241, 203, 0.72);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 5.8vw, 34px);
+  font-weight: 700;
+  color: #3b2a1a;
+
+  cursor: pointer;
+  transition: 0.18s ease;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.65),
+    0 3px 7px rgba(65,38,12,.18);
+}
+
+.topic-btn:hover{
+  transform: translateY(-2px);
+  background: rgba(255, 247, 220, 0.88);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.75),
+    0 6px 12px rgba(65,38,12,.28);
+}
+
+.topic-btn:active{
+  transform: translateY(0);
+}
+
+.icon{
+  width: 54px;
+  min-width: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 36px;
+  line-height: 1;
+}
+
+/* ========= FOLHA DE CONTEÚDO ========= */
+.content-sheet{
+  position: absolute;
+
+  top: -18px;
+  left: -16px;
+  right: -16px;
+  bottom: -12px;
+
+  z-index: 50;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transform: scaleY(0);
+  transform-origin: top center;
+
+  background-image: url("/img/pergaminho-sheet.png");
+  background-size: 145% 125%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: opacity .18s ease;
+}
+
+.content-sheet.open{
+  opacity: 1;
+  pointer-events: auto;
+
+  animation:
+    desenrolarPergaminho .42s ease forwards;
+}
+
+@keyframes desenrolarPergaminho{
+
+  0%{
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  45%{
+    transform: scaleY(1.02);
+    opacity: 1;
+  }
+
+  100%{
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+}
+
+/* ========= CABEÇALHO FIXO DO PERGAMINHO ========= */
+.sheet-header{
+  flex: 0 0 auto;
+
+  min-height: 104px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px 78px 10px 34px;
+
+  z-index: 80;
+}
+
+.sheet-header h2{
+  font-size: clamp(24px, 5.8vw, 38px);
+  line-height: 1.08;
+  text-align: center;
+  color: #4b2b15;
+}
+
+/* ========= CORPO ROLÁVEL ========= */
+.sheet-body{
+  flex: 1 1 auto;
+
+  overflow-y: auto;
+
+  padding: 12px 34px 18px;
+
+  scrollbar-width: thin;
+}
+
+.sheet-body p{
+  font-size: clamp(18px, 4.4vw, 24px);
+  line-height: 1.5;
+  margin-bottom: 16px;
+
+  text-align: justify;
+
+  color: #3a2412;
+}
+
+.sheet-body .formula{
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(20px, 5vw, 28px);
+}
+
+/* ========= RODAPÉ FIXO DO PERGAMINHO ========= */
+.sheet-footer{
+  flex: 0 0 auto;
+
+  min-height: 86px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 28px 24px;
+
+  z-index: 80;
+}
+
+/* ========= BOTÃO FECHAR ========= */
+.close-sheet{
+  position: absolute;
+
+  top: 18px;
+  right: 28px;
+
+  z-index: 90;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  border: 2px solid rgba(92,52,18,.55);
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(255,248,220,.96),
+      rgba(220,176,105,.90)
+    );
+
+  color: #3b2413;
+
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.75),
+    0 3px 8px rgba(65,38,12,.28);
+
+  transition: .18s ease;
+}
+
+/* ========= BOTÕES DO RODAPÉ ========= */
+.sheet-nav-left{
+  display: flex;
+  gap: 12px;
+}
+
+.sheet-btn{
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  border: 2px solid rgba(92,52,18,.55);
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(255,248,220,.96),
+      rgba(220,176,105,.90)
+    );
+
+  color: #3b2413;
+
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.75),
+    0 3px 8px rgba(65,38,12,.28);
+
+  transition: .18s ease;
+}
+
+.sheet-btn:hover,
+.close-sheet:hover{
+  transform: translateY(-2px);
+}
+
+.sheet-btn:active,
+.close-sheet:active{
+  transform: translateY(0);
+}
+
+/* ========= NAVEGAÇÃO DA TELA ========= */
+.nav{
+  flex: 0 0 auto;
+
+  margin-top: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 18px max(4px, env(safe-area-inset-bottom));
+}
+
+.nav-btn{
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  border: 1.5px solid rgba(100, 70, 40, 0.45);
+
+  background: rgba(255, 245, 215, 0.45);
+
+  font-size: 28px;
+  font-weight: 700;
+  color: #2f2217;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nav-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.22);
+}
+
+.nav-btn:active{
+  transform: translateY(0px);
+}
+
+/* ========= TELAS MUITO PEQUENAS ========= */
+@media (max-height: 700px){
+
+  .title{
+    font-size: clamp(34px, 9vw, 44px);
+    margin-bottom: 10px;
+  }
+
+  .topics{
+    gap: 7px;
+  }
+
+  .topic-btn{
+    min-height: 50px;
+    padding: 7px 18px;
+    font-size: clamp(19px, 5vw, 26px);
+    gap: 14px;
+  }
+
+  .icon{
+    width: 42px;
+    min-width: 42px;
+    font-size: 28px;
+  }
+
+  .content-sheet{
+    background-size: 160% 130%;
+  }
+
+  .sheet-header{
+    min-height: 88px;
+    padding: 18px 64px 8px 24px;
+  }
+
+  .sheet-header h2{
+    font-size: clamp(22px, 5.5vw, 32px);
+  }
+
+  .sheet-body{
+    padding: 8px 22px 12px;
+  }
+
+  .sheet-body p{
+    font-size: clamp(15px, 4vw, 19px);
+    margin-bottom: 10px;
+  }
+
+  .sheet-footer{
+    min-height: 74px;
+    padding: 8px 22px 18px;
+  }
+
+  .close-sheet{
+    top: 16px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 24px;
+  }
+
+  .sheet-btn{
+    width: 44px;
+    height: 44px;
+
+    font-size: 24px;
+  }
+
+  .nav{
+    margin-top: 8px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .nav-btn{
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+}

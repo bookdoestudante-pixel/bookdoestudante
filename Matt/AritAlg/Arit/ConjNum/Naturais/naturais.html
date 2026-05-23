@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Naturais - Book do Estudante</title>
+
+  <link rel="stylesheet" href="./naturais.css" />
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#7a4a24">
+  <link rel="apple-touch-icon" href="/img/icons/icon-192.png">
+
+  <script src="/pwa.js" defer></script>
+</head>
+
+<body>
+  <div class="bg-fixed" aria-hidden="true"></div>
+
+  <main class="screen" role="main">
+    <div class="parchment">
+
+      <header class="title-area">
+        <h1 class="title">Naturais</h1>
+      </header>
+
+      <section class="topics" id="topics" aria-label="Menu de Naturais">
+
+        <button class="topic-btn" data-panel="resumo" type="button">
+          <span class="icon">📖</span>
+          <span>Resumo</span>
+        </button>
+
+        <button class="topic-btn" data-go="./Video/video.html" type="button">
+          <span class="icon">▶</span>
+          <span>Aula em Vídeo</span>
+        </button>
+
+        <button class="topic-btn" data-go="./Audio/audio.html" type="button">
+          <span class="icon">🎧</span>
+          <span>Explicação em Áudio</span>
+        </button>
+
+        <button class="topic-btn" data-go="./Exercicios/exercicios.html" type="button">
+          <span class="icon">✎</span>
+          <span>Exercícios Práticos</span>
+        </button>
+
+        <button class="topic-btn" data-go="./Simulado/simulado.html" type="button">
+          <span class="icon">🎯</span>
+          <span>Simulado</span>
+        </button>
+
+        <button class="topic-btn" data-go="./Desafio/desafio.html" type="button">
+          <span class="icon">🏅</span>
+          <span>Desafio da Semana</span>
+        </button>
+
+        <button class="topic-btn" data-go="./Ferramentas/ferramentas.html" type="button">
+          <span class="icon">🛠</span>
+          <span>Ferramentas</span>
+        </button>
+
+      </section>
+
+      <article class="content-sheet" id="resumoPanel" aria-hidden="true">
+
+        <header class="sheet-header">
+          <h2>Conjunto dos Números Naturais</h2>
+
+          <button class="close-sheet" id="fecharResumo" type="button" aria-label="Fechar">
+            ×
+          </button>
+        </header>
+
+        <div class="sheet-body">
+
+          <p>
+            Os números naturais são usados para contar, ordenar e representar quantidades.
+            Eles aparecem em situações como idade, número de alunos, páginas de um livro,
+            quantidade de objetos e posições em uma sequência.
+          </p>
+
+          <p>
+            O conjunto dos números naturais é representado por ℕ. Em geral, considera-se:
+          </p>
+
+          <p class="formula">
+            ℕ = {0, 1, 2, 3, 4, 5, ...}
+          </p>
+
+          <p>
+            Alguns livros começam os naturais em 1. Por isso, é importante observar a
+            convenção usada em cada situação.
+                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
+            convenção usada em cada situação.
+                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
+            convenção usada em cada situação.
+                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
+            convenção usada em cada situação.
+                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
+            convenção usada em cada situação.
+                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
+            convenção usada em cada situação.
+                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
+            convenção usada em cada situação.
+                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
+            convenção usada em cada situação.
+          </p>
+
+        </div>
+
+        <footer class="sheet-footer">
+
+          <div class="sheet-nav-left">
+            <button class="sheet-btn" id="sheetVoltar" type="button" aria-label="Voltar">←</button>
+            <button class="sheet-btn" id="sheetAvancar" type="button" aria-label="Avançar">→</button>
+          </div>
+
+          <button class="sheet-btn" id="sheetHome" type="button" aria-label="Home">⌂</button>
+
+        </footer>
+
+      </article>
+
+      <footer class="nav">
+        <button class="nav-btn" id="btnVoltar" type="button" aria-label="Voltar">←</button>
+        <button class="nav-btn" id="btnHome" type="button" aria-label="Home">⌂</button>
+      </footer>
+
+    </div>
+  </main>
+
+  <script src="./naturais.js"></script>
+</body>
+</html>
