@@ -248,3 +248,10 @@ body{
     height: 50px;
   }
 }
+
+/* ========= Aqui esmaece todos os botões não ativos ========= */
+button:disabled {
+  opacity: 0.35;
+  filter: grayscale(100%);
+  cursor: not-allowed;
+}

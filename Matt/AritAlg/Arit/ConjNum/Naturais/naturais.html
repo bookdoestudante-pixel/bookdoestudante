@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Naturais - Book do Estudante</title>
+  <title>Conjunto dos Números Naturais - Book do Estudante</title>
 
   <link rel="stylesheet" href="./naturais.css" />
 
@@ -21,7 +21,7 @@
     <div class="parchment">
 
       <header class="title-area">
-        <h1 class="title">Naturais</h1>
+        <h1 class="title">Conjunto dos Números Naturais</h1>
       </header>
 
       <section class="topics" id="topics" aria-label="Menu de Naturais">
@@ -31,32 +31,32 @@
           <span>Resumo</span>
         </button>
 
-        <button class="topic-btn" data-go="./Video/video.html" type="button">
+        <button class="topic-btn" data-panel="video" type="button">
           <span class="icon">▶</span>
           <span>Aula em Vídeo</span>
         </button>
 
-        <button class="topic-btn" data-go="./Audio/audio.html" type="button">
+        <button class="topic-btn" data-go="./Audio/audio.html" type="button" disabled>
           <span class="icon">🎧</span>
           <span>Explicação em Áudio</span>
         </button>
 
-        <button class="topic-btn" data-go="./Exercicios/exercicios.html" type="button">
+        <button class="topic-btn" data-go="./Exercicios/exercicios.html" type="button" disabled>
           <span class="icon">✎</span>
           <span>Exercícios Práticos</span>
         </button>
 
-        <button class="topic-btn" data-go="./Simulado/simulado.html" type="button">
+        <button class="topic-btn" data-go="./Simulado/simulado.html" type="button" disabled>
           <span class="icon">🎯</span>
           <span>Simulado</span>
         </button>
 
-        <button class="topic-btn" data-go="./Desafio/desafio.html" type="button">
+        <button class="topic-btn" data-go="./Desafio/desafio.html" type="button" disabled>
           <span class="icon">🏅</span>
           <span>Desafio da Semana</span>
         </button>
 
-        <button class="topic-btn" data-go="./Ferramentas/ferramentas.html" type="button">
+        <button class="topic-btn" data-go="./Ferramentas/ferramentas.html" type="button" disabled>
           <span class="icon">🛠</span>
           <span>Ferramentas</span>
         </button>
@@ -68,9 +68,7 @@
         <header class="sheet-header">
           <h2>Conjunto dos Números Naturais</h2>
 
-          <button class="close-sheet" id="fecharResumo" type="button" aria-label="Fechar">
-            ×
-          </button>
+          <button class="close-sheet" id="fecharResumo" type="button" aria-label="Fechar">×</button>
         </header>
 
         <div class="sheet-body">
@@ -92,33 +90,90 @@
           <p>
             Alguns livros começam os naturais em 1. Por isso, é importante observar a
             convenção usada em cada situação.
-                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
-            convenção usada em cada situação.
-                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
-            convenção usada em cada situação.
-                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
-            convenção usada em cada situação.
-                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
-            convenção usada em cada situação.
-                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
-            convenção usada em cada situação.
-                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
-            convenção usada em cada situação.
-                        Alguns livros começam os naturais em 1. Por isso, é importante observar a
-            convenção usada em cada situação.
           </p>
 
         </div>
 
         <footer class="sheet-footer">
-
           <div class="sheet-nav-left">
-            <button class="sheet-btn" id="sheetVoltar" type="button" aria-label="Voltar">←</button>
-            <button class="sheet-btn" id="sheetAvancar" type="button" aria-label="Avançar">→</button>
+            <button class="sheet-btn" id="resumoVoltar" type="button" aria-label="Voltar">←</button>
+            <button class="sheet-btn" id="resumoAvancar" type="button" aria-label="Avançar">→</button>
           </div>
 
-          <button class="sheet-btn" id="sheetHome" type="button" aria-label="Home">⌂</button>
+          <button class="sheet-btn" id="resumoHome" type="button" aria-label="Home">⌂</button>
+        </footer>
 
+      </article>
+
+      <article class="content-sheet" id="videoPanel" aria-hidden="true">
+
+        <header class="sheet-header">
+          <h2>Conjuntos Numéricos dos Naturais</h2>
+
+          <button class="close-sheet" id="fecharVideo" type="button" aria-label="Fechar">×</button>
+        </header>
+
+        <div class="sheet-body">
+
+          <p>
+            Acompanhe aqui uma vídeo-aula para lhe ajudar nos seus estudos. Boa Aula!
+          </p>
+
+          <div class="video-box">
+<iframe
+  src="https://www.youtube.com/embed/1xXL1jbGl2o"
+  title="Conjunto Numérico dos Naturais"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+          </div>
+<div class="video-actions">
+
+  <button
+    class="offline-mini-btn"
+    id="btnOfflineVideo"
+    type="button"
+    aria-label="Disponibilizar Offline">
+    ⬇
+  </button>
+
+
+
+  <div class="video-extra-actions">
+
+  <button class="video-action-btn" type="button" disabled>
+    <span class="video-action-icon">📚</span>
+    <span>Livro Digital</span>
+  </button>
+
+  <button class="video-action-btn" type="button" disabled>
+    <span class="video-action-icon">✎</span>
+    <span>Exercícios</span>
+  </button>
+
+  <button class="video-action-btn" type="button" disabled>
+    <span class="video-action-icon">🎯</span>
+    <span>Simulados</span>
+  </button>
+
+  <button class="video-action-btn" type="button" disabled>
+    <span class="video-action-icon">🏅</span>
+    <span>Desafio da Semana</span>
+  </button>
+
+</div>
+
+
+</div>
+        </div>
+
+        <footer class="sheet-footer">
+          <div class="sheet-nav-left">
+            <button class="sheet-btn" id="videoVoltar" type="button" aria-label="Voltar">←</button>
+            <button class="sheet-btn" id="videoAvancar" type="button" aria-label="Avançar">→</button>
+          </div>
+
+          <button class="sheet-btn" id="videoHome" type="button" aria-label="Home">⌂</button>
         </footer>
 
       </article>
