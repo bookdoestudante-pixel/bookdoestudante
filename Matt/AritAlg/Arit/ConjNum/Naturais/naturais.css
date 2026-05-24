@@ -369,7 +369,7 @@ body{
   width: 100%;
   aspect-ratio: 16 / 9;
 
-  margin-top: 18px;
+  margin-top: 10px;
 
   border-radius: 16px;
   overflow: hidden;
@@ -397,11 +397,15 @@ body{
   width: 100%;
 
   display: flex;
+
   justify-content: flex-end;
   align-items: center;
 
-  margin-top: 10px;
-  margin-bottom: 18px;
+  position: relative;
+
+  top: 10px;
+
+  margin-bottom: 0;
 
   padding-right: 4px;
 }
@@ -450,7 +454,7 @@ body{
 
   gap: 12px;
 
-  margin-top: 0;
+  margin-top: 60px;
   clear: both;
 }
 
